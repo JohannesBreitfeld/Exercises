@@ -9,9 +9,9 @@
 //e9(); //9. Heltal till text
 //e10(); //10. Hitta index för alla förekomster av ett givet tecken
 //e11(); //11. Kasta tärning
-//e12(); //12.Rita en box
-e13(); //13. Flytta runt ett @ med piltangenterna
-
+//e12(); //12. Rita en box
+//e13(); //13. Flytta runt ett @ med piltangenterna
+e14(); //14. Masken
 
 
 static void e1()
@@ -241,28 +241,26 @@ static void e13()
     Drawbox(20, 20);
     UserInput();
 
-    static void Drawbox(int height, int width)
+    static void Drawbox(int row, int column)
     {
-        for (int i = 1; i <= height; i++)
+        char[,] boardArray = new char[row, column];
+        for (int i = 0; i < row; i++)
         {
-            for (int j = 1; j <= width; j++)
+            for (int j = 0; j < column; j++)
             {
-                if (i == 1 || i == height)
+                if (i == 0 || i == row-1)
                 {
-                    Console.Write("#");
+                    Console.Write('#');
                 }
+                else if (j == 0 || j == column-1)
+                    Console.Write('#'); 
                 else
                 {
-                    if (j == 1 || j == width)
-                        Console.Write("#");
-                    else
-                    {
-                        Console.Write("-");
-                    }
+                    Console.Write('-');
                 }
             }
-            Console.WriteLine();
         }
+        Console.WriteLine();
     }
     static void UserInput()
     {
@@ -293,6 +291,94 @@ static void e13()
             }
             Console.SetCursorPosition(col, row);
             Console.Write("@");
+        }
+    }
+}
+
+static void e14()
+{
+    char[,] newBoard = AddObstaclesToBoard(Drawbox(20, 40), 5);
+    PrintBoard(newBoard);
+    Run(newBoard);
+
+    static char[,] Drawbox(int row, int column)
+    {
+        char[,] boardArray = new char[row, column];
+        for (int i = 0; i < row; i++)
+        {
+            for (int j = 0; j < column; j++)
+            {
+                if (i == 0 || i == row - 1)
+                {
+                    boardArray[i, j] = '#';
+                }
+                else if (j == 0 || j == column - 1)
+                {
+                    boardArray[i, j] = '#';
+                }
+                else
+                {
+                    boardArray[i, j] = '-';
+                }
+            }
+        }
+        return boardArray;
+    }
+    static void Run(char[,] board)
+{
+        ConsoleKeyInfo consoleKeyInfo;
+        int boardWidth = board.GetLength(1);
+        int boardHeight = board.GetLength(0);
+        int col = board.GetLength(1)/2; 
+        int row = board.GetLength(0) /2;
+        Console.SetCursorPosition(col, row);
+        Console.Write("@");
+        while (true)
+        {
+            consoleKeyInfo = Console.ReadKey(true);
+            Console.SetCursorPosition(col, row);
+            Console.Write("-");
+            switch (consoleKeyInfo.Key)
+            {
+                case ConsoleKey.LeftArrow:
+                    if (board[row, col-1] != '#') --col;
+                    break;
+                case ConsoleKey.UpArrow:
+                    if (board[row-1, col] != '#') --row;
+                    break;
+                case ConsoleKey.DownArrow:
+                    if (board[row+1, col] != '#') ++row;
+                    break;
+                case ConsoleKey.RightArrow:
+                    if (board[row, col+1] != '#') ++col;
+                    break;
+
+            }
+            Console.SetCursorPosition(col, row);
+            Console.Write("@");
+        }
+}
+    static char[,] AddObstaclesToBoard(char[,] board, int NrOfRandomObstales)
+    {
+        Random rand = new Random();
+        int row = board.GetLength(0);
+        int col = board.GetLength(1);
+        
+        for (int i = 0; i < NrOfRandomObstales; i++)
+        {
+            board[rand.Next(1, row - 2), rand.Next(1, col - 2)] = '#';
+        }
+        return board;
+    }
+    static void PrintBoard(char[,] board)
+    {
+        for (int i = 0; i < board.GetLength(0); i++)
+        {
+            for (int j = 0; j < board.GetLength(1); j++)
+            {
+                Console.Write(board[i, j]);
+            }
+            Console.WriteLine();
         }
     }
 }
