@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercises", "Exercises\Exercises.csproj", "{9256EC40-F0C9-42C9-B061-082AF490C960}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicOOP", "Exercises\BasicOOP.csproj", "{9256EC40-F0C9-42C9-B061-082AF490C960}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Variabler", "Variabler\Variabler.csproj", "{DBB1BF1D-9A20-4704-AF05-15CF2C457A66}"
 EndProject
@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Funktioner", "Funktioner\Fu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Förberedelseövningar_Labb1", "Förberedelseövningar_Labb1\Förberedelseövningar_Labb1.csproj", "{2C5A19A8-F815-458F-A323-EBBE1CAE2685}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetadataFrånFil", "MetadataFrånFil\MetadataFrånFil.csproj", "{D55ACCC6-9BFD-48D2-9F8C-CCE5CBEC517F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetadataFrånFil", "MetadataFrånFil\MetadataFrånFil.csproj", "{D55ACCC6-9BFD-48D2-9F8C-CCE5CBEC517F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
