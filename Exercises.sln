@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Förberedelseövningar_Labb
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetadataFrånFil", "MetadataFrånFil\MetadataFrånFil.csproj", "{D55ACCC6-9BFD-48D2-9F8C-CCE5CBEC517F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Properties", "Properties\Properties.csproj", "{5D9461BD-10C6-4909-8F0E-3942F1D825F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{D55ACCC6-9BFD-48D2-9F8C-CCE5CBEC517F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D55ACCC6-9BFD-48D2-9F8C-CCE5CBEC517F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D55ACCC6-9BFD-48D2-9F8C-CCE5CBEC517F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D9461BD-10C6-4909-8F0E-3942F1D825F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D9461BD-10C6-4909-8F0E-3942F1D825F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D9461BD-10C6-4909-8F0E-3942F1D825F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D9461BD-10C6-4909-8F0E-3942F1D825F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

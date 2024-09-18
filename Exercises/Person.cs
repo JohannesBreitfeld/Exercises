@@ -7,8 +7,8 @@ namespace BasicOOP
         public string lastName;
         public Person mother;
         public Person father;
-        private double length;
-        private double weight;
+        private double _length;
+        private double _weight;
 
         public string GetFullName()
         {
@@ -38,23 +38,23 @@ namespace BasicOOP
         }
         public void SetLength(double length)
         {
-            this.length = length;
+            this._length = length;
         }
         public double GetLength()
         {
-            return length;
+            return _length;
         }
         public void SetWeight(double weight)
         {
-            this.weight = weight;
+            this._weight = weight;
         }
         public double GetWeight()
         {
-            return weight;
+            return _weight;
         }
         public double GetBMI()
         {
-            return weight / (length * 2);
+            return _weight / (_length * 2);
         }
     }
 }
