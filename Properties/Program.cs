@@ -109,3 +109,7 @@ foreach (var car in carArray)
 {
     Console.WriteLine($"Color: {car.Color} - Length: {car.Length}");
 }
+
+//10;
+Car2App App = new();
+App.Run();
