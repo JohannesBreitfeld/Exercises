@@ -1,4 +1,4 @@
-﻿namespace Enums;
+﻿namespace Arv.Enums;
 
 public enum Color
 {

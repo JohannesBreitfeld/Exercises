@@ -1,4 +1,7 @@
-﻿using Enums;
+﻿using Arv.Extensions;
+using Arv.Enums;
+
+namespace Arv.Vehicles;
 internal class Vehicle
 {
     public Brand Brand { get; set; }
@@ -14,10 +17,7 @@ internal class Vehicle
         
         this.Brand = brand;
         this.Color = Color.Black;
-        this.Size = new Size(
-            4 + rand.NextDouble() * (6 - 4),
-            1.8 + rand.NextDouble() * (2.2 - 1.8),
-            1.5 + rand.NextDouble() * (1.9 - 1.5));
+        this.Size = new Size(rand.Double(4, 6), rand.Double(1.8, 2.2), rand.Double(1.5, 1.9));
     }
     public override string ToString()
     {

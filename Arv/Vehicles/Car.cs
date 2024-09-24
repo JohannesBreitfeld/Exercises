@@ -1,4 +1,6 @@
-﻿using Enums;
+﻿using Arv.Enums;
+
+namespace Arv.Vehicles;
 
 internal class Car : Vehicle
 {
