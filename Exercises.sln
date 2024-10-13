@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetadataFrånFil", "Metadat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Properties", "Properties\Properties.csproj", "{5D9461BD-10C6-4909-8F0E-3942F1D825F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arv", "Arv\Arv.csproj", "{C5D46061-67E5-4B49-802E-89A4C502ADE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arv", "Arv\Arv.csproj", "{C5D46061-67E5-4B49-802E-89A4C502ADE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegatesAndLambda", "DelegatesAndLambda\DelegatesAndLambda.csproj", "{D74009F7-F0F2-4310-AF9F-FF4D8C86D287}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{C5D46061-67E5-4B49-802E-89A4C502ADE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5D46061-67E5-4B49-802E-89A4C502ADE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5D46061-67E5-4B49-802E-89A4C502ADE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D74009F7-F0F2-4310-AF9F-FF4D8C86D287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D74009F7-F0F2-4310-AF9F-FF4D8C86D287}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D74009F7-F0F2-4310-AF9F-FF4D8C86D287}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D74009F7-F0F2-4310-AF9F-FF4D8C86D287}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
