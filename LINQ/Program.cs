@@ -15,10 +15,17 @@ var people = new[] {
 var peopleBetween20And40 = people
     .Where(p => p.Age >= 20 && p.Age <= 40)
     .ToList();
-//    peopleBetween20And40.ForEach(p => Console.WriteLine($"{p.FirstName} {p.LastName} - {p.Age} år"));
+
+var query2 = (from p in people where p.Age >= 20 && p.Age <= 40 select p).ToList();
+
+//query2.ForEach(p => Console.WriteLine($"{p.FirstName} {p.LastName} - {p.Age} år"));
+
 
 //3. Är någon av personerna mellan 20 och 40 över 190cm lång.
-Console.WriteLine(peopleBetween20And40.Any(p => p.Height > 1.90));
+var method3 = peopleBetween20And40.Any(p => p.Height > 1.90);
+
+var query3 = (from p in query2 where p.Height > 1.9 select p).Any();
+
 
 //4. Filtrera på namn
 var peopleLongerFirstname = people
@@ -26,16 +33,67 @@ var peopleLongerFirstname = people
     .Select(p => new { FirstName = p.FirstName, LastName = p.LastName })
     .ToList();
 
-//peopleLongerFirstname.ForEach(p => Console.WriteLine($"{p.FirstName} {p.LastName}"));
+var query4 = (from p in people
+              where p.FirstName.Length > p.LastName.Length
+              select new { Firstname = p.FirstName, Lastname = p.LastName })
+              .ToList();
+
+//query4.ForEach(p => Console.WriteLine($"{p.Firstname} {p.Lastname}"));
 
 //5. Hela namnet tillsammans med BMI
 var peopleBMI = people
     .Select(p => new { Name = $"{p.FirstName} {p.LastName}", BMI = p.Weight / Math.Pow(p.Height, 2) })
     .ToList();
-//peopleBMI.ForEach(p => Console.WriteLine($"{p.Name}, BMI: {p.BMI:f2}"));
+
+var query5 = (from p in people
+              select new { Name = $"{p.FirstName} {p.LastName}", BMI = p.Weight / Math.Pow(p.Height, 2) })
+              .ToList();
+
+//query5.ForEach(p => Console.WriteLine($"{p.Name}, BMI: {p.BMI:f2}"));
 
 //6. Filtrera på BMI
-var peopleBMI20to25 = peopleBMI.Where(p => p.BMI >= 20 && p.BMI <= 25).ToList();
-//peopleBMI20to25.ForEach(p => Console.WriteLine($"{p.Name}, Bmi: {p.BMI:f2}"));
+var peopleBMI20to25 = peopleBMI.Where(p => p.BMI < 20 || p.BMI > 25).ToList();
 
-//7.
+var query6 = from p in peopleBMI
+             where p.BMI < 20 || p.BMI > 25
+             select p;
+
+//.ForEach(p => Console.WriteLine($"{p.Name}, Bmi: {p.BMI:f2}"));
+
+//7. Filtrera originallistan på BMI
+var firstListToBMI = people
+    .Where(p => (p.Weight / Math.Pow(p.Height, 2)) < 20 || (p.Weight / Math.Pow(p.Height, 2)) > 25)
+    .ToList();
+
+var query7 = from p in people
+             where (p.Weight / Math.Pow(p.Height, 2)) < 20 || (p.Weight / Math.Pow(p.Height, 2)) > 25
+             select p;
+
+//firstListToBMI.ForEach(p => Console.WriteLine($"{p.FirstName} {p.LastName}")); 
+
+//8. Username tillsammans med category
+var usernameCategory = people
+    .Select(p => new { Username = $"{p.FirstName}{p.Age}", Category = (p.Age < 18) ? "Child" : "Adult" })
+    .ToList();
+
+var query8 = (from p in people
+              select new { Username = $"{p.FirstName}{p.Age}", Category = (p.Age < 18) ? "Child" : "Adult" })
+              .ToList();
+
+//query8.ForEach(p => Console.WriteLine($"Username: {p.Username}".PadRight(30)  + $"Category {p.Category}"));
+
+//10. Sortera efter längd
+var peopleByHeight = people.OrderBy(p => p.Height);
+
+//foreach (var p in peopleByHeight)
+//{
+//    Console.WriteLine($"{p.FirstName} {p.LastName} Längd: {p.Height:f2}");
+//}
+
+//11. Sortera äldst till yngst
+var peopleByAge = people.OrderByDescending(p => p.Age);
+
+//foreach (var p in peopleByAge)
+//{
+//    Console.WriteLine($"{p.FirstName} {p.LastName} Ålder: {p.Age} år");
+//}
