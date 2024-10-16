@@ -9,6 +9,10 @@ var people = new[] {
     new { LastName = "Spjut",  FirstName = "Jessica",  Age = 39, Height = 1.75, Weight = 62},
     new { LastName = "Klasson",  FirstName = "Jörgen",  Age = 83, Height = 1.70, Weight = 75},
     new { LastName = "Svensson",  FirstName = "Sven",  Age = 23, Height = 1.87, Weight = 75},
+    new { LastName = "Svensson",  FirstName = "Anna",  Age = 53, Height = 1.55, Weight = 43},
+    new { LastName = "Svensson",  FirstName = "Berit",  Age = 83, Height = 1.67, Weight = 75},
+    new { LastName = "Svensson",  FirstName = "Carl",  Age = 41, Height = 1.88, Weight = 77},
+    new { LastName = "Svensson",  FirstName = "Daniel",  Age = 19, Height = 1.80, Weight = 74},
 };
 
 //2. Filtrera på ålder
@@ -97,3 +101,17 @@ var peopleByAge = people.OrderByDescending(p => p.Age);
 //{
 //    Console.WriteLine($"{p.FirstName} {p.LastName} Ålder: {p.Age} år");
 //}
+
+//12. Sortera i första och andra hand
+var orderPeople = people.OrderBy(p => p.LastName).ThenByDescending(p => p.FirstName);
+
+//foreach (var p in orderPeople)
+//{
+//    Console.WriteLine($"{p.FirstName} {p.LastName} - {p.Age} år");
+//}
+
+//13. LINQ vs PLINQ
+long sum = Enumerable.Range(1, 1000_000_000)
+    .Where(n => n % 3 == 00 || n % 5 == 0)
+    .Aggregate((x, y) => x+y);
+Console.WriteLine(sum); //13000ms vs 2233ms
