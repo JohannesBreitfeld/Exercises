@@ -50,19 +50,22 @@ namespace WPFKontroller.Excercises
 
         private void checkBoxXLock_Checked(object sender, RoutedEventArgs e)
         {
-            sliderPosition.Value = X;
-            labelPosition.Content = "X-position";
             if (checkBoxYLock?.IsChecked == true)
             {
                 checkBoxYLock.IsChecked = false;
             }
+            sliderPosition.Value = X;
+            labelPosition.Content = "X-position";
         }
 
         private void checkBoxYLock_Checked(object sender, RoutedEventArgs e)
         {
+            if (checkBoxXLock?.IsChecked == true)
+            {
+                checkBoxXLock.IsChecked = false;
+            }
             labelPosition.Content = "Y-position";
             sliderPosition.Value = Y;
-            checkBoxXLock.IsChecked = false;
         }
 
 
