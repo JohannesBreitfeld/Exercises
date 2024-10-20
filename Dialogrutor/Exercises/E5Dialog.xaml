@@ -1,0 +1,63 @@
+﻿<Window x:Class="Dialogrutor.Exercises.E5Dialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dialogrutor.Exercises"
+        mc:Ignorable="d"
+        Title="E5Dialog" Height="300" Width="550"
+        x:Name="Dialog">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Rectangle x:Name="colorRectangel" Grid.Column="2" Height="100" Stroke="Black" Width="100" Margin=" 20"/>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            
+            <Label Content="Red"/>
+            <Slider x:Name="sliderRed"
+                    Width="255"
+                    Minimum="0"
+                    Maximum="255"
+                    TickPlacement="BottomRight"
+                    TickFrequency="15"
+                    ValueChanged="colorSlider_ValueChanged"/>
+            
+            <Label Content="Green"/>
+            <Slider x:Name="sliderGreen"
+                    Width="255"
+                    Minimum="0"
+                    Maximum="255"
+                    TickPlacement="BottomRight"
+                    TickFrequency="15"
+                    ValueChanged="colorSlider_ValueChanged"/>
+            
+            <Label Content="Blue"/>
+            <Slider x:Name="sliderBlue"
+                    Width="255"
+                    Minimum="0"
+                    Maximum="255"
+                    TickPlacement="BottomRight"
+                    TickFrequency="15"
+                    ValueChanged="colorSlider_ValueChanged"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <Button Content="Cancel"
+                    Width="75"
+                    Margin="0 0 20 0"
+                    Click="Button_Click_Cancel"/>
+            <Button Content="OK"
+                    Width="75"
+                    Click="Button_Click_Ok"/>
+        </StackPanel>
+    </Grid>
+</Window>
