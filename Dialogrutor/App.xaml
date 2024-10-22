@@ -2,8 +2,15 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Dialogrutor"
-             StartupUri="Exercises/E5Main.xaml">
+             StartupUri="Exercises/E6Main.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="Color1" Color="#000000"/>
+        <SolidColorBrush x:Key="Color2" Color="#000000"/>
+        <SolidColorBrush x:Key="Color3" Color="#000000"/>
+        <SolidColorBrush x:Key="Color4" Color="#000000"/>
+        <SolidColorBrush x:Key="Color5" Color="#000000"/>
+        <SolidColorBrush x:Key="Color6" Color="#000000"/>
+        <SolidColorBrush x:Key="Color7" Color="#000000"/>
+        <SolidColorBrush x:Key="Color8" Color="#000000"/>
     </Application.Resources>
 </Application>
